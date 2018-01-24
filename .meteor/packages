@@ -26,4 +26,3 @@ cfs:gridfs
 momentjs:moment
 accounts-password
 ian:accounts-ui-bootstrap-3
-insecure
