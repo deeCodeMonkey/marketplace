@@ -1,0 +1,39 @@
+﻿<template name="product">
+    <h3>{{name}}</h3>
+    <div class="row product-row">
+        <div class="col-md-2">
+            <img class="full" src="{{image}}" />
+        </div>
+        <div class="col-md-10">
+            <h4>{{name}}</h4>
+            <p>
+                Average Rating: <img class="stars" src="/img/star{{getAvg reviews}}.png" />
+                {{getReviewsTotal reviews.length}}
+            </p>
+            <p>{{description}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-right">
+                {{#if currentUser}}
+                <a href="/new-review/{{_id}}" class="btn btn-success">Leave A Review</a>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+    <hr />
+    <h4>Reviews & Ratings</h4>
+    {{#each reviews}}
+    <div class="row">
+        <div class="col-md-10">
+            <img src="/img/star{{rating}}.png"/> {{body}}
+        </div>
+        <div class="col-md-2">
+            {{review_date}}
+        </div>
+    </div>
+    <br />
+    {{/each}}
+</template>
